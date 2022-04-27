@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myform">
+    <input type="text" placeholder="Enter Name" id="name">
+    <input type="text" name="" id="role" placeholder="Enter role">
+    <input type="submit">
+
+    </form>
+</body>
+</html>
+
+
+<script>
+
+
+document.querySelector("form").addEventListener("submit",myfunction)
+
+var arr=JSON.parse(localStorage.getItem("data"))||[]
+function myfunction(){
+    event.preventDefault();
+    var dataobj={
+     name:myform.name.value,
+     role:myform.role.value
+
+
+
+
+    };
+    arr.push(dataobj);
+    console.log(arr);
+
+localStorage.setItem("data",JSON.stringify(arr));
+
+
+
+}
+
+
+
+
+</script>
